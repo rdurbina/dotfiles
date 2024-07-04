@@ -1,0 +1,21 @@
+import = [
+	"~/.config/alacritty/themes/themes/argonaut.toml"
+]
+
+[window]
+
+opacity = 0.85
+dimensions = { columns = 110, lines = 30 }
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+#decorations = "None"
+
+[font]
+
+normal.family = "JetbrainsMono Nerd Font"
+bold.family = "JetbrainsMono Nerd Font"
+italic.family = "JetbrainsMono Nerd Font"
+bold_italic.family = "JetbrainsMono Nerd Font"
+
+size = 13.0
+
