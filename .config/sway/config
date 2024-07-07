@@ -38,17 +38,38 @@ output * bg ~/Pictures/unixporn/makima.png fill
 output HDMI-A-1 resolution 1920x1080 position 0,0
 output eDP-1 resolution 1920x1080 position 1920,0
 
+#Font
+
+font pango:JetbrainsMono Nerd Font 10
+
 #Gaps
 gaps inner 6
 
+#focus_follows_mouse yes
+
 #Window
 default_border pixel 3
-#smart_borders on
+smart_borders on
 client.focused #5f676a #94e2d5 #000000
 client.unfocused #5f676a #cba6f7 #000000
 client.focused_inactive #5f676a #f38ba8 #000000
 
-exec mako
+exec swaync
+
+#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# Increase volume
+bindsym XF86AudioRaiseVolume exec ~/.local/bin/volume-up.sh
+
+# Decrease volume
+bindsym XF86AudioLowerVolume exec ~/.local/bin/volume-down.sh
+
+# Mute/Unmute
+bindsym XF86AudioMute exec ~/.local/bin/mute-unmute.sh
+
+
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -90,7 +111,8 @@ exec mako
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # A script is used to launch rofi in the monitor where the cursor is
+    bindsym $mod+d exec ~/.local/bin/launch-rofi.sh
     
     #Lock screen
     bindsym $mod+m exec swaylock
@@ -222,6 +244,10 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+bar {
+	swaybar_command waybar
+}
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d

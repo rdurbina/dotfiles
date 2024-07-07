@@ -73,7 +73,8 @@
 @define-color unfocused	@bg2; 
 @define-color focused	@braqua;
 @define-color inactive	@purple;
-@define-color idle @aqua;
+@define-color idle      @aqua;
+@define-color notification @brblue;
 @define-color sound	@brgreen;
 @define-color network	@brgray;
 @define-color memory	@aqua;
@@ -109,6 +110,7 @@
 #battery,
 #clock,
 #cpu,
+#custom-notification,
 #language,
 #memory,
 #mode,
@@ -139,7 +141,9 @@
 }
 
 /* Each warning */
-#network.disconnected,
+#network.disconnected {
+	color: @black;
+}
 #memory.warning,
 #cpu.warning,
 #temperature.warning,
@@ -208,6 +212,11 @@
 	color: @black;
 }
 
+#custom-notification {
+	background: @notification;
+	color: @black
+}
+
 #memory {
 	background: @memory;
 	color: @black;
@@ -256,58 +265,64 @@
 #custom-arrow2 {
 	font-size: 16pt;
 	color: @date;
-	background: @layout;
+	background: @notification;
 }
 
 #custom-arrow3 {
+	font-size: 16pt;
+	color: @notification;
+	background: @layout;
+}
+
+#custom-arrow4 {
 	font-size: 16pt;
 	color: @layout;
 	background: @battery;
 }
 
-#custom-arrow4 {
+#custom-arrow5 {
 	font-size: 16pt;
 	color: @battery;
 	background: @temp;
 }
 
-#custom-arrow5 {
+#custom-arrow6 {
 	font-size: 16pt;
 	color: @temp;
 	background: @cpu;
 }
 
-#custom-arrow6 {
+#custom-arrow7 {
 	font-size: 16pt;
 	color: @cpu;
 	background: @memory;
 }
 
-#custom-arrow7 {
+#custom-arrow8 {
 	font-size: 16pt;
 	color: @memory;
 	background: @network;
 }
 
-#custom-arrow8 {
+#custom-arrow9 {
 	font-size: 16pt;
 	color: @network;
 	background: @sound;
 }
 
-#custom-arrow9 {
+#custom-arrow10 {
 	font-size: 16pt;
 	color: @sound;
 	background: @idle;
 }
 
-#custom-arrow10 {
+#custom-arrow11 {
 	font-size: 16pt;
 	color: @idle;
 	background: transparent;
 }
 
-#custom-arrow11 {
+#custom-arrow12 {
   font-size: 16pt;
   color: @unfocused;
   background: transparent;

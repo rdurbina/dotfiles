@@ -70,16 +70,17 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-git
-zsh-syntax-highlighting
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+export PATH=$PATH:~/.local/bin
+export QT_STYLE_OVERRIDE=gtk
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

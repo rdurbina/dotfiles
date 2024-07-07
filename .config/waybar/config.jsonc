@@ -5,27 +5,29 @@
 	"modules-left": [
 		"sway/mode",
 		"sway/workspaces",
-		"custom/arrow11",
+		"custom/arrow12",
 		"sway/window"
 	],
 
 	"modules-right": [
-    "custom/arrow10",
-    "idle_inhibitor",
+	        "custom/arrow11",
+                "idle_inhibitor",
+                "custom/arrow10",
+                "pulseaudio",
 		"custom/arrow9",
-		"pulseaudio",
-		"custom/arrow8",
 		"network",
-		"custom/arrow7",
+		"custom/arrow8",
 		"memory",
-		"custom/arrow6",
+		"custom/arrow7",
 		"cpu",
-		"custom/arrow5",
+		"custom/arrow6",
 		"temperature",
-		"custom/arrow4",
+		"custom/arrow5",
 		"battery",
-		"custom/arrow3",
+		"custom/arrow4",
 		"sway/language",
+		"custom/arrow3",
+		"custom/notification",
 		"custom/arrow2",
 		"tray",
 		"clock#date",
@@ -98,6 +100,27 @@
 		"tooltip": false
 	},
 
+	"custom/notification": {
+		"tooltip": false,
+                "format": "{icon}",
+                "format-icons": {
+                        "notification": " <span foreground='red'><sup></sup></span> ",
+                        "none": "  ",
+                        "dnd-notification": " <span foreground='red'><sup></sup></span> ",
+                        "dnd-none": "  ",
+                        "inhibited-notification": " <span foreground='red'><sup></sup></span> ",
+                        "inhibited-none": "  ",
+                        "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span> ",
+                        "dnd-inhibited-none": "  "
+       		},
+    		"return-type": "json",
+    		"exec-if": "which swaync-client",
+    		"exec": "swaync-client -swb",
+    		"on-click": "swaync-client -t -sw",
+    		"on-click-right": "swaync-client -d -sw",
+    		"escape": true
+  	},
+
 	"network": {
 		"interval": 5,
 		"format-wifi": "󰤨  {essid} ({signalStrength}%)",
@@ -153,12 +176,6 @@
 		"format-bluetooth": "{icon} {volume}%",
 		"format-muted": " ",
 		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
 			"default": [" ", " "]
 		},
 		"scroll-step": 1,
@@ -230,12 +247,17 @@
 		"tooltip": false
 	},
 
-  "custom/arrow10": {
-    "format": "",
-    "tooltip": false
-  },
-
+	"custom/arrow10": {
+    		"format": "",
+		"tooltip": false
+	},
+	
 	"custom/arrow11": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow12": {
 		"format": "",
 		"tooltip": false
 	}
